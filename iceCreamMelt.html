@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<!--
+    Phantom by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Machine Learning - Degree of the Melted-ness of Ice Cream based on the Weather (Python)</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        /* Add this CSS style */
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content-container .image {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <!-- Logo -->
+            <a href="home.html" class="logo">
+                <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Lincoln Isaque</span>
+            </a>
+
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu -->
+    <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="weather.html">Weather App</a></li>
+            <li><a href="classificationModels.html">ML classification models</a></li>
+            <li><a href="iceCreamMelt.html">Ice Cream Melt algorithm</a></li>
+            <li><a href="https://github.com/lisaque">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <h1>Evaluating the likelihood of your Ice Cream being melted & how melted it is, based on the weather</h1>
+            <p style="color: black; font-weight: bold;">In this algorithm, I created "rules" to determine how the data is processed. There are 3 states of "melted" that an Ice Cream can be: 1. "No Melt", 2. "Partially Melted", 3. "Fully Melted".</p>
+            <p style="color: black; font-weight: bold;">To increase accuracy, I made 15 rules for my algorithm, 5 for each state. Therefore when the weather details (temperature & wind-speed) are put in, determines which class the "melt" belongs in.</p>
+
+            <!-- Use the content-container class here -->
+            <div class="content-container">
+                <span class="image main"><img src="images/RulesMain.png" alt="" /></span>
+                <p style="color: black; font-weight: bold;">For example, on rule3 is:
+                    rule3 = ctrl.Rule(temperature['average'] & wind['poor'], melt['no melt']) </p>
+                <p style="color: black; font-weight: bold;">and rule13 is:
+                    rule13 = ctrl.Rule(temperature['average'] & wind['good'], melt['partially melted'])</p>
+            </div>
+
+            <p style="color: black; font-weight: bold;">Rules 1-5 contain "poor" wind (slow wind-speed) and differing weather states. Rules 11-15 contain "good" wind (high wind-speed) and differing weather states. This way the algorithm can determine multiple factors, in the evaluation of the degree of melted-ness of the Ice Cream.</p>
+            <p style="color: black; font-weight: bold;">Finally, there's an input section, to test the algorithm. User sets the temperature and wind-speed, then the results print, stating which class the "Melt" corresponds to most.</p>
+        </div>
+
+        <span class="image main"><img src="images/RulesTest.png" alt="" /></span>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <!-- ... (the rest of your code) ... -->
+    </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
